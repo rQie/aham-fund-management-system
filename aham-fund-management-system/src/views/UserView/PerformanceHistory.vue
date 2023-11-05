@@ -9,17 +9,14 @@ export default {
   name: 'PerformanceHistory',
 
   data: () => ({
-    dialog: false,
-    dialogDelete: false,
     headers: [
       {
         title: 'Net Asset Value (RM)',
         align: 'start',
-        sortable: false,
         key: 'value'
       },
-      { title: 'Increment/Decrement (%)', key: 'percent' },
-      { title: 'Date', key: 'history_date' }
+      { title: 'Increment/Decrement (%)', key: 'percent', align: 'center' },
+      { title: 'Date', key: 'history_date', align: 'center' }
     ],
     fundList: []
   }),

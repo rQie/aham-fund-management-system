@@ -15,18 +15,15 @@ export default {
     InvestRenderer
   },
   data: () => ({
-    dialog: false,
-    dialogDelete: false,
     headers: [
       {
         title: 'Name',
         align: 'start',
-        sortable: false,
         key: 'name'
       },
-      { title: 'investment_type', key: 'investment_type' },
-      { title: 'Net Asset Value (RM)', key: 'net_asset_value' },
-      { title: 'Actions', key: 'actions', sortable: false }
+      { title: 'investment_type', key: 'investment_type', align: 'center' },
+      { title: 'Net Asset Value (RM)', key: 'net_asset_value', align: 'center' },
+      { title: 'Actions', key: 'actions', sortable: false, align: 'center' }
     ],
     fundList: []
   }),
