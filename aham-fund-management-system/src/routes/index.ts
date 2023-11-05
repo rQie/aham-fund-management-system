@@ -46,7 +46,6 @@ router.beforeEach((to, from, next) => {
     next({ name })
   }
   const loggedUser = Cookies.get('token') || false
-  console.log('loggedUser', loggedUser)
 
   if (to.meta.requiresAuth) {
     if (loggedUser) return next()
