@@ -46,15 +46,17 @@ export default {
 </script>
 
 <template>
-  <v-data-table
-    :headers="headers"
-    :items="fundList"
-    :sort-by="[{ key: 'net_asset_value', order: 'desc' }]"
-    class="elevation-1"
-  >
-    <template v-slot:item.actions="{ item }">
-      <ViewPerformanceHistoryRenderer :fund="item" />
-      <InvestRenderer :fund="item" />
-    </template>
-  </v-data-table>
+  <v-container>
+    <v-data-table
+      :headers="headers"
+      :items="fundList"
+      :sort-by="[{ key: 'net_asset_value', order: 'desc' }]"
+      class="elevation-1"
+    >
+      <template v-slot:item.actions="{ item }">
+        <ViewPerformanceHistoryRenderer :fund="item" />
+        <InvestRenderer :fund="item" />
+      </template>
+    </v-data-table>
+  </v-container>
 </template>
