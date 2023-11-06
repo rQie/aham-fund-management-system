@@ -8,11 +8,8 @@ export default {
 </script>
 
 <template>
-  <v-btn
-    class="me-2"
-    density="compact"
-    icon="mdi-eye"
-    variant="text"
-    :to="`performance-history/${fund.id}`"
-  />
+  <v-btn class="me-2" density="compact" icon variant="text" :to="`performance-history/${fund.id}`">
+    <v-icon>mdi-eye</v-icon>
+    <v-tooltip activator="parent" location="top">Details</v-tooltip>
+  </v-btn>
 </template>

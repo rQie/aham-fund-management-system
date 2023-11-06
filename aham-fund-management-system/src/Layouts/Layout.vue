@@ -8,25 +8,17 @@ export default {
 </script>
 
 <template>
-  <Navbar />
-  <main
-    style="
-      height: 100vh;
-      min-height: 100vh;
-      padding-left: calc(var(--v-layout-left) + 20px) !important;
-      /* --v-layout-left: 270px; */
-      /* --v-layout-right: 0px; */
-      --v-layout-top: 70px;
-      --v-layout-bottom: 0px;
-      flex: 1 0 auto;
-      max-width: 100%;
-      transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      /* padding-left: var(--v-layout-left); */
-      /* padding-right: var(--v-layout-right); */
-      padding-top: var(--v-layout-top);
-      padding-bottom: var(--v-layout-bottom);
-    "
-  >
-    <router-view />
-  </main>
+  <v-locale-provider>
+    <v-app>
+      <Navbar />
+      <v-main>
+        <v-container fluid class="page-wrapper bg-background px-sm-5 px-4 pt-12 rounded-xl">
+          <div class="maxWidth">
+            <router-view />
+          </div>
+        </v-container>
+      </v-main>
+      <!-- </main> -->
+    </v-app>
+  </v-locale-provider>
 </template>

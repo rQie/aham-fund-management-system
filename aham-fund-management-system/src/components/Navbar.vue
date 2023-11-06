@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Cookies from 'js-cookie'
+import { UserIcon, MailIcon, ListCheckIcon } from 'vue-tabler-icons'
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -21,45 +22,42 @@ export default {
 </script>
 
 <template>
-  <div class="pa-4 d-flex justify-center">
-    <v-toolbar
-      floating
-      style="
-        padding: 0 20px;
-        border-radius: 15px;
-        max-width: calc(100% - 330px) !important;
-        z-index: 1004;
-        transform: translateY(0%);
-        position: fixed;
-        /* left: 270px; */
-        width: calc((100% - 270px) - 0px);
-      "
-    >
-      <div class="d-flex align-center justify-space-between w-100">
-        <v-btn variant="text" size="x-large" to="/"> Logo </v-btn>
-        <v-menu>
-          <template v-slot:activator="{ props }">
-            <v-btn icon="mdi-account" v-bind="props"></v-btn>
-          </template>
-
-          <v-list density="compact" rounded="xl" style="width: 200px">
-            <v-list-item to="/portfolio">
-              <v-list-item-title><v-icon icon="mdi-account-box" /> My Profile</v-list-item-title>
-            </v-list-item>
-            <v-list-item class="mt-4">
-              <v-btn
-                @click="logout"
-                block
-                prepend-icon="mdi-logout"
-                variant="outlined"
-                color="error"
-                rounded="xl"
-                >Logout</v-btn
-              >
-            </v-list-item>
-          </v-list>
-        </v-menu>
-      </div>
-    </v-toolbar>
+  <div class="container verticalLayout">
+    <div class="maxWidth">
+      <v-app-bar elevation="0" height="70">
+        <div class="d-flex align-center justify-space-between w-100">
+          <!-- Logo -->
+          <v-btn variant="text" size="x-large" to="/"> Logo </v-btn>
+          <div>
+            <!-- User Profile -->
+            <v-menu>
+              <template v-slot:activator="{ props }">
+                <!-- <v-btn icon="mdi-account" v-bind="props"></v-btn> -->
+                <v-btn class="" variant="text" v-bind="props" icon>
+                  <v-avatar size="35">
+                    <img src="@/assets/images/profile/user-1.jpg" height="35" alt="user" />
+                  </v-avatar>
+                </v-btn>
+              </template>
+              <v-sheet rounded="xl" width="200" elevation="10" class="mt-2">
+                <v-list class="py-0" lines="one" density="compact">
+                  <v-list-item color="primary" to="/portfolio">
+                    <template v-slot:prepend>
+                      <UserIcon stroke-width="1.5" size="20" />
+                    </template>
+                    <v-list-item-title class="pl-4 text-body-1">My Profile</v-list-item-title>
+                  </v-list-item>
+                </v-list>
+                <div class="pt-4 pb-4 px-5 text-center">
+                  <v-btn @click="logout" color="error" variant="outlined" class="rounded-pill" block
+                    >Logout</v-btn
+                  >
+                </div>
+              </v-sheet>
+            </v-menu>
+          </div>
+        </div>
+      </v-app-bar>
+    </div>
   </div>
 </template>

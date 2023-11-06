@@ -1,20 +1,34 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from 'url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vuetify from 'vite-plugin-vuetify'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    vuetify({
+      autoImport: true,
+      styles: { configFile: 'src/scss/variables.scss' }
+    })
+  ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    deps: {
-      inline: ['vuetify']
+  css: {
+    preprocessorOptions: {
+      scss: {}
     }
+  },
+  optimizeDeps: {
+    exclude: ['vuetify'],
+    entries: ['./src/**/*.vue']
   }
+  // build: {
+  //     rollupOptions: {
+  //         treeshake:  false
+  //     }
+  // },
 })

@@ -1,9 +1,10 @@
-import { createApp } from 'vue'
-import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
+import '@mdi/font/css/materialdesignicons.css'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import * as labsComponents from 'vuetify/labs/components'
+
+import { BLUE_THEME } from '@/theme/LightTheme'
 
 export default createVuetify({
   // components,
@@ -15,6 +16,35 @@ export default createVuetify({
     ...labsComponents
   },
   theme: {
-    defaultTheme: 'light'
+    defaultTheme: 'BLUE_THEME',
+    themes: {
+      BLUE_THEME
+    }
+  },
+  defaults: {
+    VCard: {
+      rounded: 'xl'
+    },
+    VTextField: {
+      variant: 'outlined',
+      density: 'comfortable',
+      color: 'primary'
+    },
+    VTextarea: {
+      variant: 'outlined',
+      density: 'comfortable',
+      color: 'primary'
+    },
+    VSelect: {
+      variant: 'outlined',
+      density: 'comfortable',
+      color: 'primary'
+    },
+    VListItem: {
+      minHeight: '45px'
+    },
+    VTooltip: {
+      location: 'top'
+    }
   }
 })

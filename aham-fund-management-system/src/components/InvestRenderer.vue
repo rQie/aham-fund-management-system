@@ -66,5 +66,8 @@ export default {
 </script>
 
 <template>
-  <v-btn class="me-2" density="compact" icon="mdi-chart-box" variant="text" @click="toggleModal" />
+  <v-btn class="me-2" density="compact" icon variant="text" @click="toggleModal">
+    <v-icon>mdi-chart-box</v-icon>
+    <v-tooltip activator="parent" location="top">Trade</v-tooltip></v-btn
+  >
 </template>
