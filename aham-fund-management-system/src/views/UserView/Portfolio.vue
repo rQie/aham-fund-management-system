@@ -47,11 +47,14 @@ export default {
 </script>
 
 <template>
-  <h2 class="text-center mb-5">My Portfolio</h2>
   <v-container>
-    <div class="d-flex">
-      <h5 class="ms-auto fw-bold">Grand Total: RM {{ portfolioDetails.grand_total }}</h5>
-    </div>
-    <v-data-table :headers="headers" :items="portfolioDetails.investment" class="elevation-1" />
+    <h2 class="text-h2 text-center ms-auto fw-bold">
+      Grand Total: RM {{ portfolioDetails.grand_total }}
+    </h2>
   </v-container>
+  <v-card elevation="10" class="pb-2">
+    <v-card-item class="pa-6">
+      <v-data-table :headers="headers" :items="portfolioDetails.investment" class="elevation-1" />
+    </v-card-item>
+  </v-card>
 </template>

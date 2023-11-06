@@ -15,12 +15,15 @@ export default {
           title: `Investment`,
           html: `
                     <div>
-                        <p class="fw-bold">- ${fund.name} -</p>
-                        <p class="fw-bold">- ${fund.investment_type} -</p>
-                        <p class="fw-bold">RM ${fund.net_asset_value}</p>
+                        <p class="text-h5 text-10 font-weight-medium">- ${fund.name} -</p>
+                        <p class="text-h5 text-10 font-weight-medium">- ${fund.investment_type} -</p>
+                        <p class="text-h5 text-10 font-weight-medium">RM ${fund.net_asset_value}</p>
                     </div>
-                    <div class="mb-3">
-                        <input type="number" class="form-control form-control" id="purchased_unit" placeholder="How many unit to purchase?" required>
+                    <div class="v-field__field my-3">
+                        <input type="number" class="v-field__input" id="purchased_unit" placeholder="How many unit to purchase?" required style="    border: 1px solid #ccc!important;
+                          border-radius: 16px;
+                          padding: 0.01em 16px;
+                          height: 3rem;">
                     </div>
                 `,
           showCancelButton: true,
@@ -67,7 +70,7 @@ export default {
 
 <template>
   <v-btn class="me-2" density="compact" icon variant="text" @click="toggleModal">
-    <v-icon>mdi-chart-box</v-icon>
+    <v-icon stroke-width="1.5" size="20">mdi-chart-box</v-icon>
     <v-tooltip activator="parent" location="top">Trade</v-tooltip></v-btn
   >
 </template>

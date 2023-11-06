@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Cookies from 'js-cookie'
-import { UserIcon, MailIcon, ListCheckIcon } from 'vue-tabler-icons'
+import { UserIcon } from 'vue-tabler-icons'
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -33,7 +33,7 @@ export default {
             <v-menu>
               <template v-slot:activator="{ props }">
                 <!-- <v-btn icon="mdi-account" v-bind="props"></v-btn> -->
-                <v-btn class="" variant="text" v-bind="props" icon>
+                <v-btn variant="text" v-bind="props" icon>
                   <v-avatar size="35">
                     <img src="@/assets/images/profile/user-1.jpg" height="35" alt="user" />
                   </v-avatar>

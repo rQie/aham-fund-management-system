@@ -7,9 +7,6 @@ import * as labsComponents from 'vuetify/labs/components'
 import { BLUE_THEME } from '@/theme/LightTheme'
 
 export default createVuetify({
-  // components,
-  // directives,
-  // labsComponents,
   components: {
     ...components,
     ...directives,

@@ -21,7 +21,7 @@ export default {
         align: 'start',
         key: 'name'
       },
-      { title: 'investment_type', key: 'investment_type', align: 'center' },
+      { title: 'Investment Type', key: 'investment_type', align: 'center' },
       { title: 'Net Asset Value (RM)', key: 'net_asset_value', align: 'center' },
       { title: 'Actions', key: 'actions', sortable: false, align: 'center' }
     ],
@@ -46,17 +46,19 @@ export default {
 </script>
 
 <template>
-  <v-container>
-    <v-data-table
-      :headers="headers"
-      :items="fundList"
-      :sort-by="[{ key: 'net_asset_value', order: 'desc' }]"
-      class="elevation-1"
-    >
-      <template v-slot:item.actions="{ item }">
-        <ViewPerformanceHistoryRenderer :fund="item" />
-        <InvestRenderer :fund="item" />
-      </template>
-    </v-data-table>
-  </v-container>
+  <v-card elevation="10" class="pb-2">
+    <v-card-item class="pa-6">
+      <v-data-table
+        :headers="headers"
+        :items="fundList"
+        :sort-by="[{ key: 'net_asset_value', order: 'desc' }]"
+        class="elevation-1"
+      >
+        <template v-slot:item.actions="{ item }">
+          <ViewPerformanceHistoryRenderer :fund="item" />
+          <InvestRenderer :fund="item" />
+        </template>
+      </v-data-table>
+    </v-card-item>
+  </v-card>
 </template>
